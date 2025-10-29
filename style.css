@@ -1,0 +1,223 @@
+/* ====================== */
+/* Basics */
+/* ====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ====================== */
+/* Shared elements */
+/* ====================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ====================== */
+/* Header & Navigation */
+/* ====================== */
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: #a8d5ba;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #a8d5ba;
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::after,
+header nav a.active::after {
+    width: 100%;
+}
+
+/* ====================== */
+/* Home site hero section */
+/* ====================== */
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('assets/hero-image.jpg') center/cover no-repeat;
+    color: #fff;
+    min-height: 80vh;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    background-color: #a8d5ba;
+    color: #1a1a1a;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(168, 213, 186, 0.4);
+}
+
+.hero .cta-button:hover {
+    background-color: #8ab89a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(168, 213, 186, 0.5);
+}
+
+/* ====================== */
+/* Main content (other html sites) */
+/* ====================== */
+main {
+    flex: 1;
+    padding: 3rem 0;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+}
+
+/* ====================== */
+/* FOOTER */
+/* ====================== */
+footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #a8d5ba;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ====================== */
+/* Responsive Media Queries */
+/* ====================== */
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+    .hero h2 { font-size: 2.5rem; }
+    .hero p { font-size: 1.1rem; }
+}
+
+/* Mobile landscape and smaller */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero {
+        min-height: 70vh;
+        padding: 3rem 1rem;
+    }
+
+    .hero h2 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+}
+
+/* Small mobiles */
+@media (max-width: 480px) {
+    header h1 { font-size: 1.5rem; }
+    .hero h2 { font-size: 1.8rem; }
+    .hero .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
